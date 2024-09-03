@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: #fa0707;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 30%;
+            padding: 10px;
+            font-size: 18px;
+            margin: 10px 1%;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .add {
+            background-color: #28a745;
+        }
+        .multiply {
+            background-color: #007bff;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Kalkulator</h2>
+        <input type="number" id="num1" placeholder="Angka Pertama">
+        <input type="number" id="num2" placeholder="Angka Kedua">
+        <div>
+            <button class="add" onclick="tambah()">Tambah</button>
+            <button class="multiply" onclick="kali()">Kali</button>
+        </div>
+        <div class="result" id="result">Hasil: </div>
+    </div>
+
+    <script>
+        function tambah() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let hasil = num1 + num2;
+            document.getElementById("result").innerText = "Hasil: " + hasil;
+        }
+
+        function kali() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let hasil = num1 * num2;
+            document.getElementById("result").innerText = "Hasil: " + hasil;
+        }
+    </script>
+</body>
+</html>
